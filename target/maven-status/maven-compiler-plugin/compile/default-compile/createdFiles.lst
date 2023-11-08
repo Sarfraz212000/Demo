@@ -1,0 +1,4 @@
+in\saffu\Application.class
+in\saffu\controller\StudentController.class
+in\saffu\entity\StudentEntity.class
+in\saffu\repository\StudentRepository.class
