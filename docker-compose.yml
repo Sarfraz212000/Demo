@@ -12,12 +12,12 @@ services:
       - /data/springboot-app
     
   mysqldb:
-    image: mysql:8.0
+    image: mysql:5.7
     networks:
       - springboot-db-net
     environment:
       - MYSQL_ROOT_PASSWORD=Pass123
-      - MYSQL_DATABASE=Anaraya
+      - MYSQL_DATABASE=saffuDB
     volumes:
       - /data/mysql
 networks:

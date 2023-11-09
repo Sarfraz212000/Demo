@@ -1,13 +1,13 @@
-server:
-  port: 9090
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://mysqldb:3306/sbms
-    password: Pass123
+    url: jdbc:mysql://mysqldb:3306/saffuDB
     username: root
+    password: Pass123
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-  
+    
+server:
+  port: 9091    
