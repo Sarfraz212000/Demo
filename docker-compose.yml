@@ -8,6 +8,9 @@ services:
       - springboot-application
     depends_on:
       - mysqldb
+    environment:
+     - SPRING_DATASOURCE_URL=jdbc:mysql://mysqldb:3306/studentdb?createDatabaseIfNotExist=true
+
     
   mysqldb:
     image: mysql:5.7
