@@ -12,12 +12,12 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - springbootapp
+      - bootapp
 
   appservice:
     image: sb-app
     networks:
-      - springbootapp
+      - bootapp
     depends_on:
       - mysqldb
     volumes:
@@ -29,6 +29,6 @@ services:
     ports:
       - "9090:9090"
 networks:
-  springbootapp: 
+  bootapp: 
 
 
