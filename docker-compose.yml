@@ -2,34 +2,35 @@ version: "3"
 
 services:
   mysql:
-   image: mysql
+    image: mysql
    
-   environment:
-     MYSQL_ROOT_PASSWORD: Pass123
-     MYSQL_DATABASES: StudentDb
-     MYSQL-USER: root
-   ports:
-    - "3306:3306"
-   volumes:
-    - ./mysql-data:/var/lib/mysql
-   networks:
-    - springbootapp
+    environment:
+      MYSQL_ROOT_PASSWORD: Pass123
+      MYSQL_DATABASE: StudentDb
+      MYSQL_USER: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    networks:
+      - springbootapp
+
   appservice:
-   image: sb-app
-   depends_on:
-    - mysql
-   environment:
-     SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/StudentDb
-     SPRING_DATASOURCE_USERNAME: root
-     SPRING_DATASOURCE_PASSWORD: Pass123
-  
-   ports:
-    - "9090:9090"
-   networks:
-    - springbootapp
+    image: sb-app
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/StudentDb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Pass123
+
+    ports:
+      - "9090:9090"
+    networks:
+      - springbootapp
+
+networks:
+  springbootapp:
+
 volumes:
   mysql-data:
-  
-     
-      
-     
