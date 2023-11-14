@@ -8,8 +8,6 @@ services:
       - springboot-application
     depends_on:
       - mysqldb
-    volumes:
-      - /data/springboot-app
     
   mysqldb:
     image: mysql:5.7
