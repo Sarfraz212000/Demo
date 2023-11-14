@@ -1,12 +1,10 @@
 version: "3"
-
 services:
   mysqldb:
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: Pass123
       MYSQL_DATABASE: StudentDb
-      MYSQL_USER: root
     volumes:
       - /data/mysql
     ports:
