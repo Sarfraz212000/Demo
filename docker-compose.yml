@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  mysql:
+  mysqldb:
     image: mysql
    
     environment:
@@ -17,18 +17,17 @@ services:
 
   appservice:
     image: sb-app
+    networks:
+      - springbootapp
     depends_on:
-      - mysql
+      - mysqldb
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/StudentDb
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/StudentDb
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: Pass123
 
     ports:
       - "9090:9090"
-    networks:
-      - springbootapp
-
 networks:
   springbootapp:
 
