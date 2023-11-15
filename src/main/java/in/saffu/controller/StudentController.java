@@ -39,7 +39,7 @@ public class StudentController {
 	public String getAllData(StudentEntity student, Model model) {
 		List<StudentEntity> studentList = studentRepository.findAll();
 		model.addAttribute("students", studentList);
-		return "View";
+		return "view";
 		
 	}
 	
