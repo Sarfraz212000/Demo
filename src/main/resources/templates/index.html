@@ -19,25 +19,34 @@
 		<form th:action="@{/student}" th:object="${student}" th:method="POST">
 
 			<table>
-				
+
 				<tr>
 					<td>Student Name:</td>
 					<td><input type="text" th:field="*{name}" /></td>
 				</tr>
-				
+
 				<tr>
 					<td>Student password:</td>
 					<td><input type="password" th:field="*{pwd}" /></td>
 				</tr>
-				
+
 				<tr>
 					<td>Submit:</td>
-					<td><input type="submit" value="submit" /></td>
+					<td><input type="submit" value="Save" /> 
+					<a href="/view" > <input type="button"
+							value="view" />
+					</a></td>
+
 				</tr>
+
 
 			</table>
 
 		</form>
+		<hr>
+
+		
+
 	</div>
 
 	<script
